@@ -1,14 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Trash, Plus } from "lucide-react";
 
+interface TodoItem {
+    id: number;
+    text: string;
+}
 
 export default function Todo() {
     const [todoValue, setTodoValue] = useState<string>("");
-    const [todos, setTodos] = useState<string[]>([]);
+    const [todos, setTodos] = useState<TodoItem[]>(() => {
+        const savedTodos = localStorage.getItem("todos");
+        return savedTodos ? JSON.parse(savedTodos) : [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem("todos", JSON.stringify(todos));
+    }, [todos]);
 
     const handleAddTodo = (todo: string) => {
         if (todo.trim() === "") return;
-        setTodos([...todos, todo]);
+        setTodos([...todos, { id: Date.now(), text: todo }]);
+        setTodoValue("");
     }
 
     const handleDeleteTodo = (index: number) => {
@@ -25,7 +37,7 @@ export default function Todo() {
             </div>
             <ul className="todo-list">
                 {todos.map((todo, index) => (
-                    <li key={index}>{todo}  
+                    <li key={todo.id}>{todo.text}  
                         <button onClick={() => handleDeleteTodo(index)}> <Trash /> </button>
                     </li>
                 ))}

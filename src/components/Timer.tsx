@@ -32,7 +32,7 @@ export default function Timer() {
             }, 1000);
         }
 
-        if (time <= 0) {
+        if (time <= 0 && isRunning ) {
             console.log("Time's up!");
             setIsRunning(false);
             sounds.play();
