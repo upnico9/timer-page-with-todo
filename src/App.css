@@ -1,0 +1,272 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;   
+}
+
+.container h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.container h2 {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.clock-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 500px;                   
+    margin: 1rem auto;
+    display: flex;                   
+    flex-direction: column;
+    gap: 0.3rem;     
+}
+
+.clock-container h2 {
+    color: #334155;                
+    margin-bottom: 1rem;           
+    font-size: 1.5rem;              
+}
+
+.clock-time {
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.6rem;              
+    margin: 0;                    
+}
+
+.clock-container:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);  
+    transform: translateY(-2px);     
+    transition: all 0.2s ease;      
+}
+
+.clock-date {
+    font-size: 1.1rem;              
+    margin: 0;                     
+}
+
+
+
+.timer-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 500px;                    
+    margin: 1rem auto;
+}
+
+.timer-container:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);  
+    transform: translateY(-2px);     
+    transition: all 0.2s ease;      
+}
+
+.timer-container h2 {
+    color: #334155;                 
+    margin-bottom: 1rem;            
+    font-size: 1.5rem;              
+}
+
+.timer-container p {
+    font-size: 2rem;
+    margin: 0;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+input:hover {
+    border-color: #007bff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+input:active {
+    border-color: #007bff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.timer-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 0.6rem;
+}
+
+.timer-buttons button {
+    background-color: #e2e8f0;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.timer-buttons button:hover {
+    background-color: #cbd5e1;
+} 
+
+.timer-buttons button:active {
+    background-color: #94a3b8;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.timer-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 0.6rem;
+}
+
+.timer-actions button {
+    background-color: #e2e8f0;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 15px;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.timer-actions button:hover {
+    background-color: #cbd5e1;
+} 
+
+.timer-actions button:active {
+    background-color: #94a3b8;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.todo-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 500px;                    
+    margin: 1rem auto;
+}
+
+.todo-container:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);  
+    transform: translateY(-2px);    
+    transition: all 0.2s ease;      
+}
+
+.todo-container h2 {
+    color: #334155;                 
+    margin-bottom: 1rem;            
+    font-size: 1.5rem;              
+}
+
+/* Input container - helps align input and button */
+.input-container {
+    display: flex;                
+    gap: 0.5rem;                 
+    align-items: stretch;        
+}
+
+/* Input styling */
+.input-container input {
+    text-align: left;
+    width: 100%;
+    padding: 0.75rem 1rem;       
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: 1.5;    
+    margin: 0;       
+}
+
+/* Button styling */
+.input-container button {
+    padding: 0.75rem 1.5rem;     
+    background-color: #e2e8f0;
+    font-size: 1rem;
+    line-height: 1.5;           
+    border: none;
+    border-radius: 8px;         
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;        
+}
+
+.input-container button:hover {
+    background-color: #cbd5e1;
+} 
+
+.input-container button:active {
+    background-color: #94a3b8;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.todo-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.todo-list li button {
+    background-color: #e2e8f0;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+

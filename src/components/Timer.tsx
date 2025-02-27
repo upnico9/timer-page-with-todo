@@ -73,25 +73,28 @@ export default function Timer() {
 
 
     return (
-        <div>
+        <div className="timer-container">
             <h2>Timer</h2>
             <p>{formatTime(time)}</p>
             <h3>Select manual time in minutes</h3>
             <input type="number" value={selectedTime / 60} onChange={(e) => handleSelectTime(Number(e.target.value))} />
-            <button onClick={() => handleSelectTime(15)}>15</button>
-            <button onClick={() => handleSelectTime(30)}>30</button>
-            <button onClick={() => handleSelectTime(60)}>60</button>
-            
+            <div className="timer-actions">
+                <button onClick={handleStart}>
+                    <Play />
+                </button>
+                <button onClick={handleStop}>
+                    <Pause />
+                </button>
+                <button onClick={handleReset}>
+                    <RotateCcw />
+                </button>
+            </div>
             <br></br>
-            <button onClick={handleStart}>
-                <Play />
-            </button>
-            <button onClick={handleStop}>
-                <Pause />
-            </button>
-            <button onClick={handleReset}>
-                <RotateCcw />
-            </button>
+            <div className="timer-buttons">
+                <button onClick={() => handleSelectTime(15)}>15</button>
+                <button onClick={() => handleSelectTime(30)}>30</button>
+                <button onClick={() => handleSelectTime(60)}>60</button>
+            </div>
         </div>
     )
 }

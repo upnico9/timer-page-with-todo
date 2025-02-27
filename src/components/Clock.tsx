@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { Clock as ClockIcon, Calendar } from "lucide-react";
 
 export default function Clock() {
     const [time, setTime] = useState(new Date());
@@ -11,10 +11,10 @@ export default function Clock() {
         return () => clearInterval(timer);
     }, []);
     return (
-        <div>
+        <div className="clock-container">
             <h2>Clock</h2>
-            <p>{time.toLocaleTimeString()}</p>
-            <p>{time.toLocaleDateString('en-US', {
+            <p className="clock-time"><ClockIcon /> {time.toLocaleTimeString()}</p>
+            <p className="clock-date"><Calendar /> {time.toLocaleDateString('en-US', {
                 day: 'numeric',
                 month: 'long',
                 year: 'numeric'

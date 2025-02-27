@@ -7,6 +7,7 @@ export default function Todo() {
     const [todos, setTodos] = useState<string[]>([]);
 
     const handleAddTodo = (todo: string) => {
+        if (todo.trim() === "") return;
         setTodos([...todos, todo]);
     }
 
@@ -16,13 +17,13 @@ export default function Todo() {
 
     
     return (
-        <div>
+        <div className="todo-container">
             <h2>Ideas or stuffs to do</h2>
-            <div>
+            <div className="input-container">
                 <input type="text" onChange={(e) => setTodoValue(e.target.value)} />
                 <button onClick={() => handleAddTodo(todoValue)}> <Plus /> </button>
             </div>
-            <ul>
+            <ul className="todo-list">
                 {todos.map((todo, index) => (
                     <li key={index}>{todo}  
                         <button onClick={() => handleDeleteTodo(index)}> <Trash /> </button>

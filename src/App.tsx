@@ -7,8 +7,8 @@ function App() {
 
   return (
     <div>
-      <h1> Clock worker & writing notes </h1>
       <div className="container">
+        <h1> Clock worker & writing notes </h1>
         <Clock />
         <Timer />
         <Todo />
